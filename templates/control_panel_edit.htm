@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Edit Post</title>
+        <style>
+            table,th,td
+            {
+            border:1px solid black;
+            border-collapse:collapse;
+            }
+        </style>
+    </head>
+    <link rel="stylesheet" type="text/css" href="theme.css"/>
+    <body>
+        <!--h1>Submit Posts - {{uploadUrl}}</h1-->
+        <h1>Edit Post: {{design.designTitle}}</h1>
+        <form action = "{{uploadUrl}}" method="post" enctype="multipart/form-data">
+            <label>
+                <div>Design Title</div>
+                <input type="text" name="design_title" value="{{design.designTitle}}">
+            </label>
+            <br><br>
+
+            <label>
+                <div>Common Image</div>
+                <input type="file" name="common_picture" accept="image/jpg, image/*">    
+            </label>
+            
+            <table>
+                <tr>
+                    <td style="width:200px">Image 1</td>
+                    <td>
+                        <label>
+                            <div>Main</div>
+                            <input type="file" name="picture1_main" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                    <td>
+                       <label>
+                            <div>Second</div>
+                            <input type="file" name="picture1_second" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <div>Third</div>
+                            <input type="file" name="picture1_third" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Image 2</td>
+                    <td>
+                        <label>
+                            <div>Main</div>
+                            <input type="file" name="picture2_main" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                    <td>
+                       <label>
+                            <div>Second</div>
+                            <input type="file" name="picture2_second" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <div>Third</div>
+                            <input type="file" name="picture2_third" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Image 3</td>
+                    <td>
+                        <label>
+                            <div>Main</div>
+                            <input type="file" name="picture3_main" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                    <td>
+                       <label>
+                            <div>Second</div>
+                            <input type="file" name="picture3_second" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <div>Third</div>
+                            <input type="file" name="picture3_third" accept="image/jpg, image/*">    
+                        </label>
+                    </td>
+                </tr>
+            </table>
+            
+            <label>
+                <div>Talent Name</div> 
+                <input type="text" name="designer_name" value="{{design.designerName}}">
+            </label>
+            
+            <label>
+                <div>Talent Position</div> 
+                <input type="text" name="designer_position" value="{{design.designerPosition}}">
+            </label>
+            
+            <label>
+                <div>Designer Details</div>
+                <textarea name="designer_details">{{design.designerDetails}}</textarea>
+            </label>
+            
+            <label>
+                <div>Description</div>
+                <textarea name="description">{{design.desc}}</textarea>
+            </label>
+            
+            <label>
+                <div>Garment Details</div>
+                <textarea name="garment_details">{{design.garmentDetails}}</textarea>
+            </label>
+
+            <label>
+                <div>Youtube Link</div>
+                <input type="text" name="video_url" value="{{design.videoUrl}}">
+            </label>
+
+            <label>
+                <div>Youtube Share Link</div>
+                <input type="text" name="video_share_url" value="{{videoShareUrl}}">
+            </label>
+            
+            <input type="hidden" name="entity_id" value="{{design.key()}}" />
+
+            <!--div class="error">{{error}}</div-->
+            <input type="submit">
+
+        </form>
+        <a href='/'>home</a>
+    </body>
+</html>

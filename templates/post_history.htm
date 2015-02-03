@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Post History</title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="theme.css"/>
+    <body>
+    <H1>Post History</H1>
+        <ul>
+        {% for design in designs %}
+            <li>
+                <span class = "postDetails">{{design.designTitle}} ({{design.designerName}} - {{design.designerPosition}}) - ({{design.created.strftime('%b %d %Y, %I.%M%p')}})</span>
+                <a href="/ControlPanelEdit?entity_id={{design.key()}}">Edit Post</a>
+            </li>
+        {% endfor %}
+        </ul>
+        <br>
+        <a href='/'>home</a>
+    </body>
+</html>

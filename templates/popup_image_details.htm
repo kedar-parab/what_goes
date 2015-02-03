@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>What Goes</title>
+        <style type"text/css">
+        	#main_div {
+        		width: 302px;
+        		height: 453px;
+        	}
+
+        	#thumbnails_div {
+
+        	}
+        </style>
+        <script type='text/javascript' src='jqzoom_js/jquery-1.6.js'></script>
+        <script type='text/javascript' src='jqzoom_js/jquery.jqzoom-core.js'></script>
+        <link rel="stylesheet" type="text/css" href="jqzoom_css/jquery.jqzoom.css">
+        <script>
+			$(document).ready(function(){  
+			    var options = {
+					zoomType: 'standard',
+					lens:true,
+					preloadImages: true,
+					alwaysOn:false,
+					zoomWidth: 300,
+					zoomHeight: 300,
+					xOffset:30,
+					yOffset:30,
+					position:'left'
+				};  
+			    $('.MYCLASS').jqzoom(options);
+			});
+        </script>
+    </head>
+    <body>
+    	<div id="main_div">
+    		<a href="{{bigImageUrls[0]}}" class="MYCLASS" title="Zoom" rel="my_gal">
+			    <img src="{{imageUrls[0]}}" title="IMAGE TITLE">
+			</a>
+    		<!-- <img id="main_image" src={{imageUrls[0]}} width = "302" height = "453"> -->
+    	</div>
+    	<br>
+    	<div id="thumbnails_div">
+    		<a class="zoomThumbActive" href="javascript:void(0);" rel="{gallery: 'my_gal', smallimage: '{{imageUrls[0]}}',largeimage: '{{bigImageUrls[0]}}'}">
+    			<img src="{{thumbnailUrls[0]}}">
+    		</a>
+    		<a href="javascript:void(0);" rel="{gallery: 'my_gal', smallimage: '{{imageUrls[1]}}',largeimage: '{{bigImageUrls[1]}}'}">
+    			<img src="{{thumbnailUrls[1]}}">
+    		</a>
+    		<a href="javascript:void(0);" rel="{gallery: 'my_gal', smallimage: '{{imageUrls[2]}}',largeimage: '{{bigImageUrls[2]}}'}">
+    			<img src="{{thumbnailUrls[2]}}">
+    		</a>
+    	</div>
+
+    	<!-- <input type="button" value="Zoom In" onclick="zoom(0.9)" />
+    	<input type="button" value="Zoom In" onclick="zoom(1.1)" /> -->
+    
+    </body>
+</html>
